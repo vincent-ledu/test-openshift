@@ -26,7 +26,12 @@ app.get('/', function (req, res) {
     res.redirect('/');
   });
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+console.log("process.env.PORT: " + process.env.PORT);
+console.log("process.env.OPENSHIFT_NODEJS_PORT:" + process.env.OPENSHIFT_NODEJS_PORT);
+console.log("process.env.IP:" + process.env.IP);
+console.log("process.env.OPENSHIFT_NODEJS_IP:" + process.env.OPENSHIFT_NODEJS_IP);
+
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 console.log("Listening on "+ server_ip_address +", port: " + server_port);
-app.listen(server_port, server_ip_address);
+app.listen(port, ip);
