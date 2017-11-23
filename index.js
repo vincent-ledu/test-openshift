@@ -33,5 +33,5 @@ console.log("process.env.OPENSHIFT_NODEJS_IP:" + process.env.OPENSHIFT_NODEJS_IP
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
-console.log("Listening on "+ server_ip_address +", port: " + server_port);
+console.log("Listening on "+ ip +", port: " + port);
 app.listen(port, ip);
